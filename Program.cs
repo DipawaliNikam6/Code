@@ -10,18 +10,10 @@ class Program
         }
         else
         {
-            // Step 2: print length, and loop over all arguments.
-            Console.Write("args length is ");
-            Console.WriteLine(args.Length);
-            for (int i = 0; i < args.Length; i++)
-            {
-                string argument = args[i];
-                Console.Write("args index ");
-                Console.Write(i); // Write index
-                Console.Write(" is [");
-                Console.Write(argument); // Write string
-                Console.WriteLine("]");
-            }
+            
+            FileDetails.GetVersion(-v,"abc.txt");
+            FileDetails.GetSize(-s,"abc.txt");
+            
         }
         Console.ReadLine();
     }
