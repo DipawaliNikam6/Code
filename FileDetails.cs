@@ -7,24 +7,25 @@ Class FileDetails
  
 public string? FileVersion { get; }
 
-public int GetVersion(String FileName)  
+public int GetVersion(String fileName)  
 {  
-        FileVersionInfo.GetVersionInfo(Path.Combine(Environment.SystemDirectory, FileName));
-        FileVersionInfo myFileVersionInfo = FileVersionInfo.GetVersionInfo(Environment.SystemDirectory + FileName);
+        FileVersionInfo.GetVersionInfo(Path.Combine(Environment.SystemDirectory, fileName));
+        FileVersionInfo myFileVersionInfo = FileVersionInfo.GetVersionInfo(Environment.SystemDirectory + fileName);
         FileVersion=myFileVersionInfo.FileVersion
-        return FileVersion
+        
         // Print the file name and version number.
         Console.WriteLine("File: " + myFileVersionInfo.FileDescription + '\n' +
            "Version number: " + myFileVersionInfo.FileVersion);
-    
+        return FileVersion;
 }
-public int GetSize(String file)  
+public int GetSize(String fileName)  
 {  
 
-// Get the information about a file
-FileInfo fi = new FileInfo(file);
-// Print the file size to console
-Console.WriteLine($"File size: {fi.Length} bytes");
+    FileInfo fileinfo = new FileInfo(fileName);
+    var size=fileinfo.Length;
+    Console.WriteLine(size);
+    return size;
 }
+
 
 }
