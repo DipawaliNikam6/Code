@@ -7,7 +7,7 @@ Class FileDetails
  
 public string? FileVersion { get; }
 
-public int GetVersion(String fileName)  
+public int GetVersion(String version,String fileName)  
 {  
         FileVersionInfo.GetVersionInfo(Path.Combine(Environment.SystemDirectory, fileName));
         FileVersionInfo myFileVersionInfo = FileVersionInfo.GetVersionInfo(Environment.SystemDirectory + fileName);
@@ -18,7 +18,7 @@ public int GetVersion(String fileName)
            "Version number: " + myFileVersionInfo.FileVersion);
         return FileVersion;
 }
-public int GetSize(String fileName)  
+public int GetSize(Sytring size,String fileName)  
 {  
 
     FileInfo fileinfo = new FileInfo(fileName);
